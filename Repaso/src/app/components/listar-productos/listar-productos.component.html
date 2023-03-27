@@ -5,16 +5,32 @@
                 lista de productos
             </div>
         </div>
+        <div
+            class="grid grid-cols-3 text-center text-gray-300 gap-3 p-3 border-b-2 border-l-2 border-r-2 border-teal-500 bg-slate-700">
+            <div class="col">
+                <button
+                routerLink="/crear"
+                    class="p-2 rounded-t-lg w-full hover:bg-teal-500 hover:text-gray-600 bg-teal-600  duration-300 hover:scale-110">nuevo</button>
+            </div>
+            <div class="col">
+                <button
+                    class="p-2 rounded-t-lg w-full hover:bg-cyan-500 hover:text-gray-600 bg-cyan-600 duration-300 hover:scale-110">editar</button>
+            </div>
+            <div class="col">
+                <button
+                    class="p-2 rounded-t-lg w-full hover:bg-red-500 hover:text-gray-600 bg-red-600 duration-300 hover:scale-110">eliminar</button>
+            </div>
+        </div>
     </div>
     <div class="col-start-2 col-span-3">
-        <div class="bg-slate-700 rounded-b-lg p-3 border-2 border-teal-500">
+        <div class="bg-slate-700 rounded-b-lg border-2 p-3 border-teal-500">
             <div class="text-gray-400">
                 <table mat-table [dataSource]="dataSource">
 
                     <!-- Position Column -->
                     <ng-container matColumnDef="position">
                         <th mat-header-cell *matHeaderCellDef> No. </th>
-                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                        <td mat-cell *matCellDef="let element"> <i><input class="mr-2" type="radio" name="seleccion"></i> {{element.position}} </td>
                     </ng-container>
 
                     <!-- Name Column -->
@@ -35,9 +51,22 @@
                         <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
                     </ng-container>
 
+                    <ng-container matColumnDef="acciones">
+                        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                        <td mat-cell *matCellDef="let element">
+                            <img class="w-5 cursor-pointer float-left duration-300 hover:scale-125"
+                                src="../../../assets/delete.svg" alt="">
+                            <img class="w-5 cursor-pointer float-right duration-300 hover:scale-125"
+                                src="../../../assets/edit.svg" alt="">
+                        </td>
+                    </ng-container>
+
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                    aria-label="Select page of periodic elements">
+                </mat-paginator>
 
 
             </div>
