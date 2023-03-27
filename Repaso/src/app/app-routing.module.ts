@@ -7,6 +7,7 @@ const routes: Routes = [
   {path:'', component:ListarProductosComponent},
   {path:'crear', component:CrearEditarProductoComponent},
   {path:'editar/:id', component:CrearEditarProductoComponent},
+  {path:'**', redirectTo:'', pathMatch:'full'},
 ];
 
 @NgModule({
