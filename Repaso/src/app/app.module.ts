@@ -8,6 +8,7 @@ import { ListarProductosComponent } from './components/listar-productos/listar-p
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -22,7 +23,8 @@ import {MatTableModule} from '@angular/material/table';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
