@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { CrearEditarProductoComponent } from './components/crear-editar-producto/crear-editar-producto.component';
+import { ListarProductosComponent } from './components/listar-productos/listar-productos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    CrearEditarProductoComponent,
+    ListarProductosComponent,
   ],
   imports: [
     BrowserModule,
