@@ -26,7 +26,8 @@
                         <input class="rounded-lg bg-slate-700 border-2 border-teal-500" type="text"
                             formControlName="nombre">
                         <label class="text-red-500 font-bold"
-                            *ngIf="productoForm.controls['nombre'].errors != null && productoForm.controls['nombre'].touched == true">campo requerido</label>
+                            *ngIf="productoForm.controls['nombre'].errors != null && productoForm.controls['nombre'].touched == true">campo
+                            requerido</label>
                     </div>
                     <div class="col col-span-2 p-2  rounded-lg bg-transparent">
                         <label>Categoria</label><br>
@@ -38,15 +39,17 @@
                             <option value="3">op3</option>
                         </select>
                         <label class="text-red-500 font-bold"
-                            *ngIf="productoForm.controls['categoria'].errors != null && productoForm.controls['categoria'].touched == true">campo requerido</label>
-                    
+                            *ngIf="productoForm.controls['categoria'].errors != null && productoForm.controls['categoria'].touched == true">campo
+                            requerido</label>
+
                     </div>
                     <div class="col col-span-2 p-2  rounded-lg bg-transparent">
                         <label>Ubicacion</label><br>
                         <input class="rounded-lg bg-slate-700 border-2 border-teal-500" type="text"
                             formControlName="ubicacion">
                         <label class="text-red-500 font-bold"
-                            *ngIf="productoForm.controls['ubicacion'].errors != null && productoForm.controls['ubicacion'].touched == true">campo requerido</label>
+                            *ngIf="productoForm.controls['ubicacion'].errors != null && productoForm.controls['ubicacion'].touched == true">campo
+                            requerido</label>
 
                     </div>
                     <div class="col col-span-2 p-2  rounded-lg bg-transparent">
@@ -54,12 +57,13 @@
                         <input class="rounded-lg bg-slate-700 border-2 border-teal-500" type="number"
                             formControlName="precio">
                         <label class="text-red-500 font-bold"
-                            *ngIf="productoForm.controls['precio'].errors != null && productoForm.controls['precio'].touched == true">campo requerido</label>
+                            *ngIf="productoForm.controls['precio'].errors != null && productoForm.controls['precio'].touched == true">campo
+                            requerido</label>
 
                     </div>
 
                     <div class="col col-start-2  col-span-3 rounded-lg bg-transparent">
-                        <button type="submit"
+                        <button type="submit" [disabled]="productoForm.status == 'INVALID'"
                             class="w-full p-2 rounded-lg border-2 border-teal-400 bg-slate-600 hover:bg-slate-800">guardar</button>
                     </div>
 
