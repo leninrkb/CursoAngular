@@ -1,7 +1,11 @@
 const express = require('express');
+const conectar_db = require('./db');
 
 //creo servidor
 const app = express();
+
+//conecto a la db
+conectar_db();
 
 //defino ruta principal
 app.get('/',(req, res) => {
