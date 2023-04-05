@@ -1,5 +1,5 @@
 const express = require('express');
-const conectar_db = require('./db');
+const conectar_db = require('./config/db');
 
 //creo servidor
 const app = express();
@@ -7,11 +7,12 @@ const app = express();
 //conecto a la db
 conectar_db();
 
+//midware
+app.use(express.json());
+
 //defino ruta principal
-app.get('/',(req, res) => {
-    res.send('funcionando')
-});
+app.use('/api/productos',require('./routes/producto'));
 
 app.listen(4000, () => {
-    console.log('servidor corriendo en 4000');
+    console.log('servidor corriendo en http://localhost:4000/');
 });
